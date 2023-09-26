@@ -85,6 +85,13 @@
                                     <action selector="addToCartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qJh-ad-9VG"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qe-tp-9a1">
+                                <rect key="frame" x="27" y="569" width="142" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
@@ -95,6 +102,7 @@
                         <outlet property="priceDisplayOutlet" destination="ciA-qj-gVn" id="QfD-Ha-YQZ"/>
                         <outlet property="userItemInput" destination="ags-M9-vVc" id="dPq-G1-qYJ"/>
                         <outlet property="userQuantityInput" destination="X4a-4J-lHa" id="lcE-H1-YuV"/>
+                        <outlet property="wrongLabel" destination="2Qe-tp-9a1" id="U8U-nb-CJe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

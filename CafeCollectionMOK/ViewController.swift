@@ -8,8 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-   
+    
+    
     @IBOutlet weak var foodDisplayOutlet: UITextView!
     
     @IBOutlet weak var userItemInput: UITextField!
@@ -24,11 +24,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var cartDisplay: UITextView!
     
     
+    @IBOutlet weak var wrongLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
     let food : [String] = ["Hotdog","Cheeseburger","Skittles","Ice Tea","French Fries"]
     
     let prices : [String] = ["2.50","3.25","1.25","2.00","1.75"]
@@ -57,27 +59,37 @@ class ViewController: UIViewController {
     
     @IBAction func addToCartButton(_ sender: Any) {
         let foodItem = userItemInput.text!
-        let quantity = Double(userQuantityInput.text!)!
-        //print(foodItem)
-        //print(quantity)
+        let quantity = Double(userQuantityInput.text!)
         cart[foodItem] = quantity
         //print(cart)
         if food.contains(foodItem) {
             add += "\n\(cart)"
-            //cartDisplay.text = add
+            cartDisplay.text = add
             let indexOf = Int(exactly: food.firstIndex(of: foodItem)!)!
             let pr = Double(prices[indexOf])!
-            let quant  = Double(quantity)
-            let temp = pr * quant
-            cartDisplay.text = ("$\(temp)")
-            //print(temp)
+            let quant  = Double(quantity!)
+            var temp = pr * quant
+            
+            cartDisplay.text = ("$\(temp)" + " --- " + foodItem)
+            
+            
             if cart.keys.contains(foodItem) {
-                
+                wrongLabel.text = "Item is already in Cart"
             }
         }
+        else{
+            wrongLabel.text = "Invaild Input"
+            
+        }
+        
+        //if cart.keys.contains(quantity) {
+        
+        // }
+        // else {
+        //   wrongLabel.text = "Invaild Input"
+        //}
+        //}
+        
         
     }
-    
-    
 }
-
